@@ -14,6 +14,7 @@ import java.time.Duration;
 
 public class SeleniumWebDriver {
 
+
     public static WebDriver chromeDriver() {
         WebDriverManager.chromedriver().setup();
 
@@ -30,21 +31,19 @@ public class SeleniumWebDriver {
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return wd;
     }
-    
+
+
     public static WebDriver dockerWebdriver(){
         ChromeOptions options = new ChromeOptions();
         RemoteWebDriver webDriver = null;
         try {
-            webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            webDriver = new RemoteWebDriver(new URL ("http://localhost:4444/wd/hub"), options);
             webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        }
-        catch (Exception e){
-            try {
-                throw e;
-            } catch (MalformedURLException ex) {
-                ex.printStackTrace();
-            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
         return webDriver;
     }
+
+
 }
