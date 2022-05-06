@@ -7,7 +7,7 @@ import utils.SeleniumWebDriver;
 
 public class Test1 {
     public void searchGG (){
-        WebDriver wd = SeleniumWebDriver.chromeDriver();
+        WebDriver wd = SeleniumWebDriver.dockerWebdriver();
         SeleniumUtils util = new SeleniumUtils();
 
         wd.get("http://google.com");
@@ -32,7 +32,6 @@ public class Test1 {
     }
     public static void main(String[] args) {
         Test1 test1 = new Test1();
-        test1.searchGgUsingFF();
         test1.searchGG();
     }
 }
