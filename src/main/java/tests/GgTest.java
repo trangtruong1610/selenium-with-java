@@ -3,31 +3,26 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.GgPage;
-import utils.SeleniumWebDriver;
+import utils.Driver.DriverBase;
 
 
-public class GgTest {
-    GgPage ggPage;
+public class GgTest extends DriverBase {
     WebDriver driver;
 
-    @BeforeTest
+    @BeforeTest(alwaysRun = true)
     public void setUp(){
-        driver = SeleniumWebDriver.chromeDriver();
-    }
+        driver = getWebdriver();
 
-    @AfterTest
-    public void tearDown(){
-        driver.quit();
     }
 
     @Test
     public void searchWithChrome() {
-        ggPage = new GgPage(driver);
+        GgPage ggPage = new GgPage(driver);
         ggPage.searchGG(driver,"demo testng");
     }
 
     @Test
-    public void testSuite() {
+    public void testCase() {
         System.out.println("hello world");
     }
 }

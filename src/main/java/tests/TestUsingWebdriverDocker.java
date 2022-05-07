@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import utils.SeleniumUtils;
 import utils.SeleniumWebDriver;
 
-public class Test1 {
+public class TestUsingWebdriverDocker {
     public void searchGG (){
         WebDriver wd = SeleniumWebDriver.dockerWebdriver();
         SeleniumUtils util = new SeleniumUtils();
@@ -31,7 +31,7 @@ public class Test1 {
         wd.quit();
     }
     public static void main(String[] args) {
-        Test1 test1 = new Test1();
+        TestUsingWebdriverDocker test1 = new TestUsingWebdriverDocker();
         test1.searchGG();
     }
 }
