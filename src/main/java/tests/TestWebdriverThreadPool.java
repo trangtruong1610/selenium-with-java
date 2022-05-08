@@ -12,7 +12,7 @@ public class TestWebdriverThreadPool extends DriverBase {
     public void testLogin(){
         WebDriver driver = getWebdriver();
         GgPage ggPage = new GgPage(driver);
-        ggPage.searchGG(driver,"demo testng");
+        ggPage.searchGG("demo testng");
     }
     @Test
     public void testLogin2(){

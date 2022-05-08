@@ -24,7 +24,7 @@ public class GgPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void searchGG (WebDriver driver, String search_key){
+    public void searchGG (String search_key){
         driver.get(URL_login);
         search_input.sendKeys(search_key);
         submitBtn.click();

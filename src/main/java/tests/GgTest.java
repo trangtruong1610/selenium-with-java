@@ -18,7 +18,7 @@ public class GgTest extends DriverBase {
     @Test
     public void searchWithChrome() {
         GgPage ggPage = new GgPage(driver);
-        ggPage.searchGG(driver,"demo testng");
+        ggPage.searchGG("demo testng");
     }
 
     @Test
