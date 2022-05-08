@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.SeleniumUtils;
+import utils.Utils;
 
 public class GgPage {
     @FindBy (name = "q")
@@ -16,7 +16,8 @@ public class GgPage {
     @CacheLookup
     WebElement submitBtn;
 
-    String URL_login = "http://google.com";
+    Utils util = new Utils();
+    String URL_login = util.getValueFromConfigFileByKey("GG_URL");
     WebDriver driver;
 
     public GgPage(WebDriver driver) {
