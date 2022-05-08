@@ -3,30 +3,24 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.LoginPage;
 import utils.Driver.DriverBase;
-import utils.SeleniumUtils;
 
 public class TestTakeScreenshotWhenFailed extends DriverBase {
 
     @Test
     public void testLoginPass(){
         WebDriver driver = getWebdriver();
-        SeleniumUtils utils = new SeleniumUtils();
-        driver.get("https://the-internet.herokuapp.com/login");
-        utils.waitId(driver, "username").sendKeys("tomsmith");
-        utils.waitId(driver, "password").sendKeys("SuperSecretPassword!");
-        utils.waitXpath(driver,"//*[@type='submit']").click();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.Login("tomsmith", "SuperSecretPassword!");
     }
 
     @Test
     public void testLoginFail(){
         WebDriver driver = getWebdriver();
-        SeleniumUtils utils = new SeleniumUtils();
-        driver.get("https://the-internet.herokuapp.com/login");
-        utils.waitId(driver, "username").sendKeys("username");
-        utils.waitId(driver, "password").sendKeys("password");
-        utils.waitXpath(driver,"//*[@type='submit']").click();
 
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.Login("tomsmith", "SuperSecretPassword!");
         Assert.fail("test failed");
     }
 
