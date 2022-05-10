@@ -10,14 +10,14 @@ public class TestTakeScreenshotWhenFailed extends DriverBase {
 
     @Test
     public void testLoginPass(){
-        WebDriver driver = getWebdriver();
+        WebDriver driver = getChromedriver();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.Login("tomsmith", "SuperSecretPassword!");
     }
 
     @Test
     public void testLoginFail(){
-        WebDriver driver = getWebdriver();
+        WebDriver driver = getChromedriver();
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.Login("tomsmith", "SuperSecretPassword!");
