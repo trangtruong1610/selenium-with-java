@@ -12,12 +12,16 @@ import utils.Utils;
 
 
 public class TestWebdriverThreadPool extends DriverBase {
+    Utils util = new Utils();
 
-    @Test
-    public void testLogin(){
-        WebDriver driver = getWebdriver();
-        GgPage ggPage = new GgPage(driver);
-        ggPage.searchGG("demo testng");
+    @Description("test login success")
+    @Test(description = "test login success")
+    public void testLoginHerokuApp(){
+        WebDriver driver = getChromedriver();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.Login("tomsmith", "SuperSecretPassword!");
+        Boolean successMsg = driver.findElement(By.xpath("//*[text()=' Logout']")).isDisplayed();
+        Assert.assertEquals(successMsg, true);
     }
 
     @Description("test login failed 2")
