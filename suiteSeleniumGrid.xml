@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" parallel="methods" thread-count="4">
+    <test name="Test Cross Browser with Selenium Grid - Chrome">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="tests.TestSeleniumGrid" />
+        </classes>
+    </test>
+    <test name="Test Cross Browser with Selenium Grid - Firefox">
+        <parameter name="browserName" value="firefox"></parameter>
+
+        <classes>
+            <class name="tests.TestSeleniumGrid" />
+        </classes>
+    </test>
+    <test name="Test Cross Browser with Selenium Grid - Safari">
+        <parameter name="browserName" value="safari"></parameter>
+
+        <classes>
+            <class name="tests.TestSeleniumGrid" />
+        </classes>
+    </test>
+</suite>

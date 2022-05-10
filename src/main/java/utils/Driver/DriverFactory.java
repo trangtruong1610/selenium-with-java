@@ -6,9 +6,16 @@ import utils.SeleniumWebDriver;
 public class DriverFactory {
     private WebDriver webdriver;
 
-    WebDriver getDriver(){
+    WebDriver getChromeDriver(){
         if (webdriver == null){
             webdriver = SeleniumWebDriver.chromeDriver();
+        }
+        return webdriver;
+    }
+
+    WebDriver getWebdriver(String browserName){
+        if (webdriver == null){
+            webdriver = SeleniumWebDriver.getWebdriver(browserName);
         }
         return webdriver;
     }

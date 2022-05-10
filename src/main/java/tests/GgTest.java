@@ -11,7 +11,7 @@ public class GgTest extends DriverBase {
 
     @BeforeTest(alwaysRun = true)
     public void setUp(){
-        driver = getWebdriver();
+        driver = getChromedriver();
 
     }
 
