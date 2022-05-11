@@ -15,9 +15,9 @@ public class TestUsingDataProvider extends DriverBase {
     public void login (String username, String password){
         System.out.println(username);
         System.out.println(password);
-//        WebDriver driver = getWebdriver();
-//        LoginPage loginPage = new LoginPage(driver);
-//        loginPage.Login(username, password);
+       WebDriver driver = getChromedriver();
+       LoginPage loginPage = new LoginPage(driver);
+       loginPage.Login(username, password);
     }
 
     @DataProvider
